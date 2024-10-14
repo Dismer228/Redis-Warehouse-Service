@@ -1,0 +1,220 @@
+{
+	"info": {
+		"_postman_id": "57252e04-9774-4231-baf7-5ec84f283444",
+		"name": "Redis warehouse service",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "38691234"
+	},
+	"item": [
+		{
+			"name": "Add new warehouse",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"id\": \"S143\",\r\n    \"address\": \"example\",\r\n    \"area\": 1200\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:5000/warehouse",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "5000",
+					"path": [
+						"warehouse"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Warehouse info",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:5000/warehouse/S143",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "5000",
+					"path": [
+						"warehouse",
+						"S143"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete warehouse",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:5000/warehouse/S133",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "5000",
+					"path": [
+						"warehouse",
+						"S133"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Obtain warehouse inventory",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:5000/warehouse/S143/inventory",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "5000",
+					"path": [
+						"warehouse",
+						"S143",
+						"inventory"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Inventory quantities received",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": []
+		},
+		{
+			"name": "Register new inventory",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"id\": \"I12\",\r\n    \"amount\": 2\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:5000/warehouse/S143/inventory",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "5000",
+					"path": [
+						"warehouse",
+						"S143",
+						"inventory"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "To record other inventory quantities",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "20",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:5000/warehouse/S143/inventory/I12",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "5000",
+					"path": [
+						"warehouse",
+						"S143",
+						"inventory",
+						"I12"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Remove inventory",
+			"request": {
+				"method": "DELETE",
+				"header": []
+			},
+			"response": []
+		},
+		{
+			"name": "Increase/decrease inventory by the quantities indicated",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:5000/warehouse/<warehouse_id>/inventory/<inventory_id>/change",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "5000",
+					"path": [
+						"warehouse",
+						"<warehouse_id>",
+						"inventory",
+						"<inventory_id>",
+						"change"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
